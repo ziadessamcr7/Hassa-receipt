@@ -7,6 +7,7 @@
 const receipt_ID = document.querySelector('.receipt_ID')
 
 const receiving_way = document.querySelector('.receiving_way')
+
 const sending_way = document.querySelector('.sending_way')
 
 const currency_type_receive = document.querySelector('.currency_type_receive')
@@ -29,6 +30,9 @@ const card_img_send = document.querySelector('.card_img_send')
 const timeOfReceipt = document.querySelector('.timeOfReceipt')
 
 const statusCase = document.querySelector('.statusCase')
+
+console.log('hello', statusCase);
+
 
 
 let userId = 0
@@ -87,8 +91,8 @@ const getReceipt = async () => {
 
             receiving_way.innerHTML = data.receive_currency_name
             sending_way.innerHTML = data.send_currency_name
-            received_amount.innerHTML = data.receiving_amount + ' ' + data.receive_currency_symbol
-            sending_amount.innerHTML = data.sending_amount + ' ' + data.send_currency_symbol
+            received_amount.innerHTML = data.receiving_amount + ' '
+            sending_amount.innerHTML = data.sending_amount + ' '
 
 
 
@@ -103,11 +107,10 @@ const getReceipt = async () => {
 
 
 
-            total_received_amount.innerHTML = data.receiving_amount.slice(0, 10)
+            total_received_amount.innerHTML = data.receive_currency_symbol + ' ' + Number(data.receiving_amount) + Number(data.receiving_charge)
 
 
-
-            total_sending_amount.innerHTML = data.sending_amount
+            total_sending_amount.innerHTML = data.send_currency_symbol + '' + Number(data.sending_amount) + Number(data.sending_charge)
 
 
             console.log(data.receive_currency_image);
@@ -140,8 +143,6 @@ const getReceipt = async () => {
             else if (data.status == 9) {
                 statusCase.innerHTML = 'ملغي'
             }
-
-
         })
         .catch(error => console.error("Fetch Error:", error));
 
@@ -172,15 +173,6 @@ const getUserData = async () => {
 }
 
 
-const requestOptions = {
-    method: "GET",
-    redirect: "follow"
-};
-
-fetch("", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.error(error));
 
 getReceipt()
 
@@ -189,3 +181,26 @@ getUserData()
 
 
 
+
+
+
+document.getElementById("downloadPDF").addEventListener("click", function () {
+
+
+
+    const { jsPDF } = window.jspdf; // استدعاء jsPDF
+
+    const receipt = document.getElementById("recipt"); // عنصر الفاتورة
+
+    html2canvas(receipt, { scale: 2 }).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF("p", "mm", "a4");
+        const imgWidth = 210;
+        console.log(canvas.height);
+
+        const imgHeight = ((canvas.height - 200) * imgWidth) / canvas.width;
+
+        pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+        pdf.save("receipt.pdf");
+    });
+});

@@ -8,6 +8,10 @@
     <link rel="stylesheet" type="text/css" href="./assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
 </head>
 
 <body>
@@ -50,66 +54,159 @@
                 معلومات الطلب
             </h4>
 
-            <table class="t table-responsive">
-
-                <thead>
-                    <tr>
-                        <th colspan="2">
-                            تفاصيل الإستلام
-                        </th>
-                        <th colspan="2">
-                            تفاصيل الإرسال
-                        </th>
-                    </tr>
-                    <!-- <tr>
-                        <th>العمود 1</th>
-                        <th>العمود 2</th>
-                        <th>العمود 3</th>
-                        <th>العمود 4</th>
-                    </tr> -->
-                </thead>
-                <tbody>
-                    <tr>
-                        <td> طريقة الاستلام </td>
-                        <td>
-                            <img class="card_img_receive" src="" alt="img1" />
-                            <span class="receiving_way"> </span>
-                        </td>
-                        <td> طريقة الإرسال </td>
-                        <td>
-                            <img class="card_img_send " src="" alt="img2" />
-
-                            <span class="sending_way"> </span>
 
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> عملة الاستلام </td>
-                        <td class="currency_type_receive"> </td>
-                        <td> العملة المرسل بها </td>
-                        <td class="currency_type_send"> </td>
-                    </tr>
-                    <tr>
-                        <td> المبلغ المستلم </td>
-                        <td class="received_amount"> </td>
-                        <td> المبلغ المرسل </td>
-                        <td class="sending_amount"> </td>
-                    </tr>
-                    <tr>
-                        <td> رسوم الاستلام </td>
-                        <td class='receiving_charge'> </td>
-                        <td> رسوم الارسال </td>
-                        <td class='sending_charge'> </td>
-                    </tr>
-                    <tr>
-                        <td> إجمالي المبلغ المستلم </td>
-                        <td class="total_received_amount"> </td>
-                        <td> إجمالي مبلغ الارسال </td>
-                        <td class="total_sending_amount"> </td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <div class="row">
+
+                <!-- awel row -->
+
+                <div class="col-6">
+                    <div>
+                        <h6> تفاصيل الإستلام </h6>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div>
+                        <h6> تفاصيل الإرسال </h6>
+                    </div>
+                </div>
+                <!-- ---------------------------------------------- -->
+
+                <!-- tany row -->
+                <div class="col-3">
+                    <div>
+                        <h6> طريقة الاستلام </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <img class="card_img_receive" src="" alt="img1" />
+                        <span class="receiving_way"> </span>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <h6> طريقة الإرسال </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <img class="card_img_send" src="./assets/imgs/IMG_0125 1.svg" alt="img2" />
+                        <span class="sending_way"> طريقة الإرسال </span>
+                    </div>
+                </div>
+                <!-- ------------------------------------------------------------- -->
+
+
+                <!-- talet row -->
+                <div class="col-3">
+                    <div>
+                        <h6> عملة الاستلام </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <span class="currency_type_receive"> usdddd </span>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <h6> العملة المرسل بها </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <span class="currency_type_send"> iqdddd </span>
+                    </div>
+                </div>
+                <!-- --------------------------------------------------------------- -->
+
+                <!-- rabe3 row -->
+                <div class="col-3">
+                    <div>
+                        <h6> المبلغ المستلم </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <span class="received_amount"> usd 1000.000 </span>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <h6> المبلغ المرسل </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <span class="sending_amount"> usd 1520.000 </span>
+                    </div>
+                </div>
+                <!-- --------------------------------------------------------->
+
+                <!-- 5ames row          -->
+                <div class="col-3">
+                    <div>
+                        <h6> رسوم الاستلام </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <span class="receiving_charge"> usd 0.00 </span>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <h6> رسوم الارسال </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <span class="sending_charge"> iqd 0.00 </span>
+                    </div>
+                </div>
+                <!-- ------------------------------------------------------------------------- -->
+
+                <div class="col-3">
+                    <div>
+                        <h6> إجمالي المبلغ المستلم </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <span class="total_received_amount"> usd 1000.00 </span>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <h6> إجمالي المبلغ المرسل </h6>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div>
+                        <span class="total_sending_amount"> 1520,000.000 iqd </span>
+                    </div>
+                </div>
+
+            </div>
+
+
 
 
             <div class="row">
@@ -123,7 +220,7 @@
 
                 <div class="col-6 col-md-6">
                     <h6 class='statusCase'>
-
+                        sss
                     </h6>
                 </div>
 
@@ -135,32 +232,10 @@
 
                 <div class="col-6 col-md-6">
                     <h6 class="timeOfReceipt">
-
+                        sssssss
                     </h6>
                 </div>
 
-                <!-- <div class="col-6 col-md-6">
-                    <h6>
-                        تفاصيل الاستلام
-                    </h6>
-
-                </div>
-
-                <div class="col-6 col-md-6">
-                    <p>PayPal</p>
-                    <p>wwwwwww</p>
-                </div>
-
-                <div class="col-6 col-md-6">
-                    <h6> تفاصيل الارسال </h6>
-                </div>
-
-                <div class="col-6 col-md-6">
-                    <a href="#">
-                        <p> Attachment </p>
-                    </a>
-                    <p> wwwwwwwwwwwwww </p>
-                </div> -->
 
             </div>
 
@@ -169,9 +244,14 @@
                 <h5 class='text-center bg-primary-subtle p-2'> مدعوم بواسطة <span class='hassa'> هسة exchange
                     </span> </h5>
             </footer>
+
+
         </div>
 
     </main>
+
+    <button id="downloadPDF" class="w-25 d-block m-auto my-3">تحميل PDF</button>
+
 
 
 
