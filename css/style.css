@@ -1,0 +1,71 @@
+@media print {
+    body {
+        width: 21cm;
+        height: 29.7cm;
+        margin: 4mm 35mm 4mm 35mm;
+        /* change the margins as you want them to be. */
+
+
+    }
+
+    h4 {
+        background-color: seagreen;
+    }
+
+
+
+    table tr th {
+        color: #ff6b31;
+    }
+
+
+}
+
+body {
+    direction: rtl;
+}
+
+table tr th,
+table tr td {
+    padding: 5px 20px;
+}
+
+table {
+    margin-bottom: 70px;
+}
+
+main .col-6 {
+    margin-bottom: 15px;
+}
+
+
+.case {
+    background-color: rgb(255, 174, 0);
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: white;
+
+}
+
+
+p {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.hassa {
+    color: #ff6b31;
+}
+
+
+.sending_charge,
+.receiving_charge {
+    color: #f3260b;
+}
+
+.card_img_receive,
+.card_img_send {
+    width: 30px;
+    height: 30px;
+}
