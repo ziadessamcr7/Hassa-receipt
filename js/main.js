@@ -9,7 +9,8 @@ const receipt_ID = document.querySelector('.receipt_ID')
 const receiving_way = document.querySelector('.receiving_way')
 const sending_way = document.querySelector('.sending_way')
 
-const currency_type = document.querySelector('.currency_type')
+const currency_type_receive = document.querySelector('.currency_type_receive')
+const currency_type_send = document.querySelector('.currency_type_send')
 
 const received_amount = document.querySelector('.received_amount')
 const sending_amount = document.querySelector('.sending_amount')
@@ -87,14 +88,15 @@ const getReceipt = async () => {
             receiving_way.innerHTML = data.receive_currency_name
             sending_way.innerHTML = data.send_currency_name
             received_amount.innerHTML = data.receiving_amount + ' ' + data.receive_currency_symbol
-            sending_amount.innerHTML = data.sending_amount + ' ' + data.receive_currency_symbol
+            sending_amount.innerHTML = data.sending_amount + ' ' + data.send_currency_symbol
 
 
 
-            sending_charge.innerHTML = data.sending_charge + ' ' + data.receive_currency_symbol
+            sending_charge.innerHTML = data.sending_charge + ' ' + data.send_currency_symbol
             receiving_charge.innerHTML = data.receiving_charge + ' ' + data.receive_currency_symbol
 
-            currency_type.innerHTML = data.receive_currency_symbol
+            currency_type_receive.innerHTML = data.receive_currency_symbol
+            currency_type_send.innerHTML = data.send_currency_symbol
 
 
             console.log(data.receiving_amount.slice(0, 10));
