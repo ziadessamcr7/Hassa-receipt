@@ -27,6 +27,9 @@ const card_img_send = document.querySelector('.card_img_send')
 
 const timeOfReceipt = document.querySelector('.timeOfReceipt')
 
+const statusCase = document.querySelector('.statusCase')
+
+
 let userId = 0
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -120,6 +123,21 @@ const getReceipt = async () => {
 
 
             userId = data.user_id
+
+            if (data.status == 0) {
+                statusCase.innerHTML = 'غير مكتمل'
+            } else if (data.status == 1) {
+                statusCase.innerHTML = 'مكتمل'
+            }
+            else if (data.status == 3) {
+                statusCase.innerHTML = 'مبلغ مسترجع'
+            }
+            else if (data.status == 2) {
+                statusCase.innerHTML = 'قيد الانتظار'
+            }
+            else if (data.status == 9) {
+                statusCase.innerHTML = 'ملغي'
+            }
 
 
         })

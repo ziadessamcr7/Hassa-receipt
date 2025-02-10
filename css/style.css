@@ -8,9 +8,6 @@
 
     }
 
-    h4 {
-        background-color: seagreen;
-    }
 
 
 
@@ -39,7 +36,7 @@ main .col-6 {
 }
 
 
-.case {
+.statusCase {
     background-color: rgb(255, 174, 0);
     width: fit-content;
     padding: 5px 10px;
@@ -68,4 +65,48 @@ p {
 .card_img_send {
     width: 30px;
     height: 30px;
+}
+
+
+@media (max-width: 576px) {
+
+    body {
+        width: 12cm;
+        height: 29.7cm;
+        /* margin: 4mm 4mm 4mm 4mm; */
+        /* change the margins as you want them to be. */
+
+
+    }
+
+
+    table {
+        width: 50% !important;
+    }
+
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+        border-color: inherit;
+        border-style: solid;
+        border-width: 0;
+        font-size: 14px;
+    }
+
+    th {
+        font-weight: 900;
+        font-size: 16px;
+    }
+
+
+    .card_img_receive,
+    .card_img_send {
+        width: 20px;
+        height: 20px;
+    }
+
+
 }
