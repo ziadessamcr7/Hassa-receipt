@@ -91,13 +91,13 @@ const getReceipt = async () => {
 
             receiving_way.innerHTML = data.receive_currency_name
             sending_way.innerHTML = data.send_currency_name
-            received_amount.innerHTML = data.receiving_amount + ' '
-            sending_amount.innerHTML = data.sending_amount + ' '
+            received_amount.innerHTML = Number(data.receiving_amount) + ' '
+            sending_amount.innerHTML = Number(data.sending_amount) + ' '
 
 
 
-            sending_charge.innerHTML = data.sending_charge + ' ' + data.send_currency_symbol
-            receiving_charge.innerHTML = data.receiving_charge + ' ' + data.receive_currency_symbol
+            sending_charge.innerHTML = Number(data.sending_charge) + ' ' + data.send_currency_symbol
+            receiving_charge.innerHTML = Number(data.receiving_charge) + ' ' + data.receive_currency_symbol
 
             currency_type_receive.innerHTML = data.receive_currency_symbol
             currency_type_send.innerHTML = data.send_currency_symbol
@@ -110,7 +110,7 @@ const getReceipt = async () => {
             total_received_amount.innerHTML = data.receive_currency_symbol + ' ' + Number(data.receiving_amount) + Number(data.receiving_charge)
 
 
-            total_sending_amount.innerHTML = data.send_currency_symbol + '' + Number(data.sending_amount) + Number(data.sending_charge)
+            total_sending_amount.innerHTML = data.send_currency_symbol + ' ' + Number(data.sending_amount) + Number(data.sending_charge)
 
 
             console.log(data.receive_currency_image);
