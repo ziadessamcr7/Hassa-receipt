@@ -1,8 +1,8 @@
 @media print {
     body {
         /* width: 21cm;
-        height: 29.7cm;
-        margin: 4mm 35mm 4mm 35mm; */
+        height: 29.7cm; */
+        margin: 8mm 0;
         /* change the margins as you want them to be. */
 
 
@@ -169,7 +169,7 @@ button#downloadPDF {
     }
 
     h6 {
-        font-size: 14px;
+        font-size: 13px;
     }
 
 
@@ -196,6 +196,14 @@ button#downloadPDF {
         font-weight: bold;
 
     } */
+
+    .col-3 span {
+        font-size: 11px;
+    }
+
+    .row {
+        margin: 15px 0 !important;
+    }
 
 
 
