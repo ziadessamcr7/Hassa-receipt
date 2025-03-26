@@ -107,10 +107,10 @@ const getReceipt = async () => {
 
 
 
-            total_received_amount.innerHTML = (data.receive_currency_symbol) + ' ' + (Number(data.receiving_amount) + Number(data.receiving_charge))
+            total_received_amount.innerHTML = (data.receive_currency_symbol) + ' ' + (Number(data.receiving_amount) - Number(data.receiving_charge))
 
 
-            total_sending_amount.innerHTML = (data.send_currency_symbol) + ' ' + (Number(data.sending_amount) + Number(data.sending_charge))
+            total_sending_amount.innerHTML = (data.send_currency_symbol) + ' ' + (Number(data.sending_amount) - Number(data.sending_charge))
 
 
             console.log(data.receive_currency_image);
